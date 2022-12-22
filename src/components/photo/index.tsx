@@ -1,11 +1,12 @@
 import * as C from './styles';
 
 type Props = {
-    url: string
+    url: string,
+    isbig: boolean
 }
-export const Photo = ({url}:Props) => {
+export const Photo = ({ url, isbig }: Props) => {
     return (
-        <C.Container>
+        <C.Container wtHover={isbig}>
             <C.IMG src={url} />
         </C.Container>
     );

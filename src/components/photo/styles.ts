@@ -1,17 +1,21 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+type ContainerProps = {
+    wtHover: boolean
+}
+export const Container = styled.div<ContainerProps>`
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
     background-color: #fff;
-    border: 3px solid #141414;
+    border: ${props => props.wtHover ? '3px solid #145c8c' : '3px solid #141414'};
     border-radius: 8px;
-    cursor: pointer;
+    cursor: ${props => props.wtHover ? 'auto' : 'pointer'};
 
     &:hover {
-        opacity: .6;
+        opacity: ${props => props.wtHover ? '1' : '.8'};
+        border:  3px solid #145c8c;
     }
 `;
 

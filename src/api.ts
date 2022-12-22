@@ -16,6 +16,12 @@ export const api = {
         */
     },
 
+    getAlbumToPagination: async (page: number, limit: number) => {
+        const virtualPage = ((page - 1) * limit) <= 0 ? 0 : ((page - 1) * limit);
+        let response = await http.get(`/albums?_start=${virtualPage}&_limit=${limit}`);
+        return response.data;
+    },
+
     getAlbum: async (id: number) => {
         let response = await http.get('/albums', { params: { id } });
         return response.data[0];
@@ -30,5 +36,6 @@ export const api = {
         let response = await http.get('/photos', { params: { id } });
         return response.data[0];
     }
+
 
 }

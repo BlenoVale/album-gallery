@@ -49,7 +49,7 @@ export const PhotoPage = () => {
             {!loading &&
                 <>
                     <C.Title>{photo?.title}</C.Title>
-                    <Photo url={photo?.url} />
+                    <Photo url={photo?.url} isbig={true}/>
                 </>
             }
         </C.Container>

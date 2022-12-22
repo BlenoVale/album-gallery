@@ -64,7 +64,7 @@ export const AlbumPage = () => {
                                     key={index}
                                     to={`/foto/${item.id}`}
                                     style={{ textDecoration: 'none' }}>
-                                    <Photo url={item.thumbnailUrl} />
+                                    <Photo url={item.thumbnailUrl} isbig={false}/>
                                 </Link>
                             ))}
                         </C.PhotosArea>
